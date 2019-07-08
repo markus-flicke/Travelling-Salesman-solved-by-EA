@@ -10,10 +10,10 @@ import pandas as pd
 def experiment(n):
     t = TravellingSalesmanProblem(N=n, pop_size=20)
     start = time()
-    fitnesses = [-100]
+    fitnesses = [-99999999]
     gradients = []
     s = 1
-    while not((time() > start + 30)or s < 0.005):
+    while not s < 0.005:
         t.next_generation()
         fitnesses.append(t.fitness(t.get_fittest()))
 
